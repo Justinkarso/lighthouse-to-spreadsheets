@@ -1,5 +1,8 @@
 # Generate batch lighthouse reports in google spreadsheets with Github Gists
 
+## (NEW) Update 1.0.1
++ Added UI to make process easier
+
 ## Get Started
 
 ```
