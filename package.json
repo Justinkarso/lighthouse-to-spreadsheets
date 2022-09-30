@@ -6,7 +6,7 @@
   "scripts": {
     "build": "NODE_ENV=production webpack",
     "build-dev": "webpack --watch",
-    "server": "node app.js",
+    "server": "nodemon app.js",
     "dev": "concurrently \"npm run server\" \"npm run build-dev\""
   },
   "keywords": [],

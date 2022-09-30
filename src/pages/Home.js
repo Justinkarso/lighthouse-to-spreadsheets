@@ -1,3 +1,4 @@
+import axios from "axios";
 import React from "react";
 import BatchScores from "../components/BatchScores";
 import GenGists from "../components/GenGists";
@@ -14,7 +15,6 @@ export default function Home() {
       setFiles(files);
     }
     if (url) {
-      console.log(url);
       setUrl(url);
     }
   };
@@ -23,6 +23,23 @@ export default function Home() {
     setStep(0);
     setFiles([]);
     setUrl("");
+  };
+
+  const handleCheckCurrent = () => {
+    axios
+      .get("/api/check-current")
+      .then((res) => {
+        if (res.data.msg === "OK") {
+          setFiles(res.data.files);
+          setStep(2);
+        }
+        if (res.data.msg === "NO") {
+          alert("No you don't");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
@@ -39,7 +56,17 @@ export default function Home() {
             ))}
           </div>
         )}
-        {step === 0 && <GenUrls handleStep={handleStep} />}
+        {step === 0 && (
+          <>
+            <GenUrls handleStep={handleStep} />
+            <button
+              onClick={handleCheckCurrent}
+              className="bg-orange-500 py-2 px-4 rounded-md mt-4 font-bold"
+            >
+              I already have lighthouse scores
+            </button>
+          </>
+        )}
         {step === 1 && <BatchScores handleStep={handleStep} />}
         {step === 2 && <GenGists handleStep={handleStep} />}
         {step === 3 && (
