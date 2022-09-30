@@ -7,6 +7,7 @@ require("dotenv").config();
 const createGist = require("./routes/createGist");
 const generateUrls = require("./routes/generateUrls");
 const batchScores = require("./routes/batchScores");
+const checkCurrent = require("./routes/checkCurrent");
 
 app.use(cors());
 app.use(express.json());
@@ -19,6 +20,7 @@ app.get("/", (req, res) => {
 app.use(createGist);
 app.use(generateUrls);
 app.use(batchScores);
+app.use(checkCurrent);
 
 app.listen(3000, () => {
   console.log("App running on http://localhost:3000");
