@@ -24,20 +24,20 @@ npm install
 GITHUB_AUTH_TOKEN=
 ```
 
-6. Start the app using 
+5. Start the app using 
 
 ```
 npm run dev
 ```
 
-7. Go to http://localhost:3000
-8. Walk through the process of the tool
+6. Go to http://localhost:3000
+7. Walk through the process of the tool
 
 > Skip next step if we are colleagues. Should be a prepared spreadsheet link in the docs. skip to step 9
 
-9. Create a spreadsheet in  [Google Spreadsheets](https://docs.google.com/spreadsheets)
+8. Create a spreadsheet in  [Google Spreadsheets](https://docs.google.com/spreadsheets)
 
-0. Go to Tools > Script Editor and replace the code that with the following [ImportJSON.gs script](https://raw.githubusercontent.com/bradjasper/ImportJSON/master/ImportJSON.gs) and remember to save and rename the file to ImportJSON.gs
+9. Go to Tools > Script Editor and replace the code that with the following [ImportJSON.gs script](https://raw.githubusercontent.com/bradjasper/ImportJSON/master/ImportJSON.gs) and remember to save and rename the file to ImportJSON.gs
 
 10.  Select column A1 and insert =ImportJSON('your_summary_gist_raw_url")
 > Make sure to use the raw gist url.
